@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="../../assets/css/edit.css">
+
+    <link rel="stylesheet" href="../../assets/css/validateotp.css" />
+    <title>Validate OTP</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2  style="font-weight: bold;color: white;" >Verify Your OTP</h2>
+      <div class="code-container">
+        <input type="text" class="code" id="opt1" oninput="digitValidate(this)" onkeyup="tabChange(1)" maxlength="1" required>
+        <input type="text" class="code" id="opt2" oninput="digitValidate(this)" onkeyup="tabChange(2)" maxlength="1" required>
+        <input type="text" class="code" id="opt3" oninput="digitValidate(this)" onkeyup="tabChange(3)" maxlength="1" required>
+        <input type="text" class="code" id="opt4" oninput="digitValidate(this)" onkeyup="tabChange(4)" maxlength="1" required>
+        <input type="text" class="code" id="opt5" oninput="digitValidate(this)" onkeyup="tabChange(5)" maxlength="1" required>
+        <input type="text" class="code" id="opt6" oninput="digitValidate(this)" onkeyup="tabChange(6)" maxlength="1" required>
+      </div>
+      <button  class="btn btn-sm btn-warning" style="font-weight: bold;" onclick="validateOtp()">Validate OTP</button>
+    </div>
+    <script src="../../assets/js/validateOtp.js"></script>
+  </body>
+
+
+  <script src="../../assets/js/jquery.min.js"></script>
+<script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+<!-- <script src="../../assets/js/moment.min.js"></script>
+<script src="../../assets/js/bootstrap-datetimepicker.min.js"></script> -->
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
+
+
+</html>

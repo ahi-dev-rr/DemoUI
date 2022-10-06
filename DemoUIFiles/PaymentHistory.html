@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MockUp SP</title>
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="../../assets/css/edit.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light navbar-expand-md fixed-top bg-light" style="font-weight: bold;border-bottom: 1px solid #198754;">
+        <div class="container-fluid"><a class="navbar-brand" href="#" style="padding: 0;">
+            <span style="font-size: 1.2rem;font-weight: bold;margin-left: 0.5rem;">Payment History</span>
+            <!-- <span style="font-size: 0.6rem;font-weight: bold;margin-left: 0.1rem;">(Ver 1.0)</span> -->
+        </a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <!-- <li class="nav-item"><a class="nav-link home" href="/">Home</a></li>
+                    -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form>
+             
+ 
+
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Batch Id</th>
+                                <th>Transaction Id</th>
+
+                                <th>Beneficiary ID Type</th>
+                                <th>Beneficiary ID Value</th>
+                                <th>Beneficiary Full Name</th>
+                                <th>Bank Account No.</th>
+                                <!-- <th>Bank Details</th> -->
+                                <th>Amount</th>
+                                <th>Payment State</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody id="searchedRecords">
+                             <tr><td colspan="7" style="text-align: center;">No Records Found</td></tr>
+                        </tbody>
+                    </table>
+                  
+                </div>
+            </div>
+
+        </div>
+      </form>
+    </div>
+
+    <div class="container d-none" id="gPageLoader">
+        <div class="row">
+            <div class="col">
+                <div class="animationload">
+                    <div class="osahanloading"></div>
+                    <div id="gPageLoaderMsg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="gAlertModal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5></h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer"><button class="btn btn-primary btn-sm" type="button" data-bs-dismiss="modal">Close</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="gConfirmModal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4></h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer"><button class="btn btn-outline-secondary btn-sm border rounded-0 border-primary btn-cancel" type="button" data-bs-dismiss="modal">Cancel</button><button class="btn btn-primary btn-sm border rounded-0 btn-confirm" type="button">Confirm</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="changePasswordModal" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Change Password</h5><button type="button" class="btn-close btn-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center"><input class="form-control-sm form-control text-center mb-2" type="password" id="changePasswordInput" placeholder="Enter New Password"><span id="changePasswordSpan" class="text-danger"></span></div>
+                <div class="modal-footer"><button class="btn btn-light btn-sm btn-modal-close" type="button" data-bs-dismiss="modal">Close</button><button class="btn btn-primary btn-sm" id="changePasswordSave" type="button">Save</button></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- <script src="../../assets/js/moment.min.js"></script>
+    <script src="../../assets/js/bootstrap-datetimepicker.min.js"></script> -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
+    <script src="../../assets/js/PaymentHistory.js"></script>
+    <script src="../../assets/js/edit.js"></script>
+</body>
+
+</html>

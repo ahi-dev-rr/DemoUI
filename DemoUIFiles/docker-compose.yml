@@ -1,0 +1,8 @@
+services:
+  client:
+    container_name: merchant_app
+    image: nginx
+    ports:
+      - 65533:80
+    volumes:
+      - ${PWD}:/usr/share/nginx/html
