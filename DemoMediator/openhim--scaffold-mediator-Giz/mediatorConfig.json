@@ -11,7 +11,7 @@
         {
           "name": "Bootstrap Scaffold Mediator Route",
           "host": "scaffold",
-          "port": "3001",
+          "port": "3005",
           "primary": true,
           "type": "http"
         }

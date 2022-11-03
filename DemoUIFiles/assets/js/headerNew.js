@@ -1,4 +1,4 @@
-var server_url = "http://172.16.17.137"
+var server_url = "http://43.205.77.129"
 
 
 function gShowPageLoader( callback ) {
