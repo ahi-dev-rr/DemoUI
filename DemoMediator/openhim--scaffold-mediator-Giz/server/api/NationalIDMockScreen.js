@@ -1,6 +1,6 @@
 import axios from "axios";
  
-export const sendOtp = (req) => {
+export const sendOtpMock = (req) => {
 
   const requestBody = req.body;
   console.log("sendOtp requestBody : " +JSON.stringify( requestBody));
@@ -11,16 +11,18 @@ export const sendOtp = (req) => {
 
   const options = {
     method: 'GET',
-    url: 'http://65.2.30.61:9995/api/generateOTP/9453149265', 
+    url: 'http://13.126.75.156:8089/auth/getOtp/'+nationalID,
+   // url: 'http://192.168.186.219:9995/api/generateOTP/9453149265',
     headers: {'Content-Type': 'application/json'} 
   };
- 
+  console.log("disbursement requestBody : " +JSON.stringify( options));
+  console.log("data requestBody : " +JSON.stringify( options.data));
   return new Promise((resolve, reject) => {
  
     axios.request(options).then(async (response) => {
        console.log("222222222222 ")
-        console.log("111 " + JSON.parse(JSON.stringify(response.data)));
-      
+        console.log(JSON.parse(JSON.stringify(response.data)));
+
         var status = response.data.status
         var responseData = {};
         if(status=="success"){
@@ -46,6 +48,10 @@ export const sendOtp = (req) => {
         
 
       resolve(responseData);
+    }).catch(  (response) => {
+      console.log("Asdasd");
+      console.log(JSON.parse(JSON.stringify(response)));
+
     });
   }).then(function (res) {
     return res;
@@ -53,7 +59,7 @@ export const sendOtp = (req) => {
 };
 
 
-export const validateOTP = (req) => {
+export const validateOTPMock = (req) => {
 
   const requestBody = req.body;
   console.log("sendOtp requestBody : " +JSON.stringify( requestBody));
@@ -65,14 +71,13 @@ export const validateOTP = (req) => {
 
   const options = {
     method: 'POST',
-    url: 'http://65.2.30.61:9995/api/validateOTP', 
+    url: 'http://13.126.75.156:8089/auth/validateOTP', 
     headers: {'Content-Type': 'application/json'} 
   };
   options.data = {
-     "otp": otp,
-     "uin" : "9453149265",
-     "transactionID": "1234567890"
-    }
+    uin: nationalID,
+    otp: otp,
+  }
 ;
   console.log("disbursement requestBody : " +JSON.stringify( options));
   console.log("data requestBody : " +JSON.stringify( options.data));
@@ -116,9 +121,9 @@ export const validateOTP = (req) => {
 };
 
  
-export const sendOtpMediator = (req) => {
+export const sendOtpMediatorMock = (req) => {
 
-  let url = "http://13.126.75.156:5001/sendotp";
+  let url = "http://13.126.75.156:5001/mocksendotp";
 
   var requestdata = req.body;
    
@@ -149,9 +154,9 @@ export const sendOtpMediator = (req) => {
 
 
 
-export const ValidatedMediator = (req) => {
+export const ValidatedMediatorMock = (req) => {
 
-  let url = "http://13.126.75.156:5001/useridotp";
+  let url = "http://13.126.75.156:5001/mockuseridotp";
 
   var requestdata = req.body;
  

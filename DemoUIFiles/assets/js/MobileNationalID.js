@@ -20,17 +20,36 @@ $( function () {
     //   if(t!=null && t=="d"){
     //    getOtpDirect();
     //   }
+    var t = getUrlParameter('t');
+       if(t!=null && t=="mock"){
+        setInterval(function() {
+          var otpGenerated = localStorage.getItem("otpGeneratedMock");
+        
+          if(otpGenerated!=null && otpGenerated!="" && otpGenerated!=undefined && otpGenerated=="true"){
+            localStorage.setItem("otpGeneratedMock", false);
+            getOtpDirect();
+          }
+         
+          }, 1000);
+       }else{
+        setInterval(function() {
+          var otpGenerated = localStorage.getItem("otpGenerated");
+        
+          if(otpGenerated!=null && otpGenerated!="" && otpGenerated!=undefined && otpGenerated=="true"){
+            $("#nationalid").hide();
+            $("#smsShow").show();
+            $('#smsShow').fadeIn("slow", function () {});
+            $("#message_id").html("Dear User,<br>OTP for "+localStorage.getItem("uin")+" National ID is 111111.")
+        
+            
+            localStorage.setItem("otpGenerated", false);
+            //getOtpDirect();
+          }
+         
+          }, 1000);
+       }
 
-
-  setInterval(function() {
-  var otpGenerated = localStorage.getItem("otpGenerated");
-
-  if(otpGenerated!=null && otpGenerated!="" && otpGenerated!=undefined && otpGenerated=="true"){
-    localStorage.setItem("otpGenerated", false);
-    getOtpDirect();
-  }
  
-  }, 1000);
 
 });
 

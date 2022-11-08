@@ -2,6 +2,7 @@ import express from "express";
 import {getdata,getdatamediator} from "./opencrvs"
 import {validateBankDetails,disbursement} from "./paymentsystem"
 import {sendOtpMediator,sendOtp,validateOTP,ValidatedMediator} from "./NationalID"
+import {sendOtpMediatorMock,sendOtpMock,validateOTPMock,ValidatedMediatorMock} from "./NationalIDMockScreen"
 
 export default app => {
     
@@ -98,7 +99,7 @@ app.post('/useridOTP', async (_req, res) => {
     res.status(404).send(`Sorry, cant find that ${err}`);
   }
 
-})
+});
 
 app.post('/useridOTPMediator', async (_req, res) => {
   try {
@@ -110,6 +111,55 @@ app.post('/useridOTPMediator', async (_req, res) => {
     res.status(404).send(`Sorry, cant find that ${err}`);
   }
 
-})
+});
+
+app.post('/sendotpMediatorMock', async (_req, res) => {
+  try {
+    
+     var getDataRes = await sendOtpMediatorMock(_req);
+      
+    await res.json(  getDataRes);
+  } catch (err) { 
+    res.status(404).send(`Sorry, cant find that ${err}`);
+  }
+
+});
+
+
+app.post('/mockgetotp', async (_req, res) => {
+  try {
+    
+     var getDataRes = await sendOtpMock(_req);
+      
+    await res.json({data: getDataRes});
+  } catch (err) { 
+    res.status(404).send(`Sorry, cant find that ${err}`);
+  }
+
+});
+
+app.post('/mockuseridOTP', async (_req, res) => {
+  try {
+    
+     var getDataRes = await validateOTPMock(_req);
+      
+    await res.json( getDataRes );
+  } catch (err) { 
+    res.status(404).send(`Sorry, cant find that ${err}`);
+  }
+
+});
+
+app.post('/useridOTPMediatorMock', async (_req, res) => {
+  try {
+    
+     var getDataRes = await ValidatedMediatorMock(_req);
+      
+    await res.json( getDataRes );
+  } catch (err) { 
+    res.status(404).send(`Sorry, cant find that ${err}`);
+  }
+
+});
       
 }
